@@ -4,7 +4,7 @@ import json
 # COMMAND ----------
 
 # Set Variables based on the DBFS directory location
-dbfs_path = "/tmp/landing/iot_syntehtic_data"
+dbfs_path = "/tmp/landing/nbamath"
 jsons_path_data = f"{dbfs_path}/data/raw.json"
 print(jsons_path_data)
 
