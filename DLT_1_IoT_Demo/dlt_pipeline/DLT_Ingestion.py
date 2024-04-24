@@ -27,8 +27,8 @@ print(dlt_pipeline_root_path)
 import dlt
 
 # Setting the path to where we generated our data
-volume_path = "/Volumes/capgemini/mafi_demo_schema/iot_syntehtic_data"
-jsons_path_data = f"{volume_path}/data"
+jsons_path_data = "dbfs:/landing/raw_jsons/"
+jsons_path_checkpoint = "dbfs:/landing/checkpoint/"
 
 # COMMAND ----------
 
