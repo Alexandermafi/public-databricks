@@ -18,7 +18,8 @@
 # COMMAND ----------
 
 # Set Variables based on the DBFS location
-jsons_path_data = "dbfs:/landing/raw_jsons/"
+dbfs_path = "dbfs:/landing/raw_jsons/"
+jsons_path_data = dbfs_path
 jsons_path_checkpoint = "dbfs:/landing/checkpoint/"
 
 delta_path_data = "/tmp/dbldatagen/streamingDemo/data"
@@ -208,18 +209,18 @@ display(dfTestData)
 
 # COMMAND ----------
 
-# Write Dataframe as JSON files in the volume
+# Write Dataframe as JSON files in the dbfs
 dfTestData.write.format("json").mode("overwrite").save(jsons_path_data)
 
 # COMMAND ----------
 
 # MAGIC %md 
-# MAGIC The python way of showing the volume content
+# MAGIC The python way of showing the DBFS content
 
 # COMMAND ----------
 
 # Show the content in the Volume
-display(dbutils.fs.ls(volume_path))
+display(dbutils.fs.ls(dbfs_path))
 
 # COMMAND ----------
 
@@ -228,36 +229,31 @@ display(dbutils.fs.ls(jsons_path_data))
 
 # COMMAND ----------
 
-
+# MAGIC %md 
+# MAGIC The shell way of showing the dbfs content
 
 # COMMAND ----------
 
-# MAGIC %md 
-# MAGIC The shell way of showing the volume content
+print(dbfs_path)
 
 # COMMAND ----------
 
 # MAGIC %sh
 # MAGIC
-# MAGIC # Using shell commands to check the volume storage. The magic command (%) at the top of the cell tells Databricks that it contains shell commands
-# MAGIC ls "/Volumes/capgemini/mafi_demo_schema/iot_syntehtic_data"
-
-# COMMAND ----------
-
-# MAGIC %sh
-# MAGIC ls "/Volumes/capgemini/mafi_demo_schema/iot_syntehtic_data/data"
+# MAGIC # Using shell commands to check the DBFS storage. The magic command (%) at the top of the cell tells Databricks that it contains shell commands
+# MAGIC ls "/dbfs/landing/raw_jsons/"
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC # Delete all data in the volume
+# MAGIC # Delete all data in DBFS
 
 # COMMAND ----------
 
 ###### RESET ######
 
 # Delete folder and its content. Correspons to "rm -r". True enables recursive mode
-# display(dbutils.fs.rm(volume_path, True))
+# display(dbutils.fs.rm(dbfs_path, True))
 
 # COMMAND ----------
 

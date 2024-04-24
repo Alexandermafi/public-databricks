@@ -32,4 +32,9 @@ display(dbutils.fs.ls("dbfs:/"))
 
 # COMMAND ----------
 
+# MAGIC %fs
+# MAGIC ls
+
+# COMMAND ----------
+
 
