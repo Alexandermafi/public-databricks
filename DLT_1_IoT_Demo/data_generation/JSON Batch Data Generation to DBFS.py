@@ -257,7 +257,7 @@ display(dbutils.fs.ls(jsons_path_data))
 ###### RESET ######
 
 # Delete folder and its content. Correspons to "rm -r". True enables recursive mode
-display(dbutils.fs.rm(volume_path, True))
+# display(dbutils.fs.rm(volume_path, True))
 
 # COMMAND ----------
 
