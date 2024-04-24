@@ -3,8 +3,8 @@
 
 # COMMAND ----------
 
-jsons_path_data = "dbfs:/Users/alexander.mafi@capgemini.com/raw_jsons/"
-jsons_path_checkpoint = "dbfs:/Users/alexander.mafi@capgemini.com/checkpoint/"
+jsons_path_data = "dbfs:/landing/raw_jsons/"
+jsons_path_checkpoint = "dbfs:/landing/checkpoint/"
 
 delta_path_data = "/tmp/dbldatagen/streamingDemo/data"
 delta_path_checkpoint = "/tmp/dbldatagen/streamingDemo/checkpoint"
